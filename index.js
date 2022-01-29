@@ -11,7 +11,7 @@ function calculateCredit (carPrice, carPercent, bankComPer, kaskoPer, livePer, p
    const bankCom = p(creditSum, bankComPer);
    const kasko = p(carPrice, kaskoPer);
    const live = p(creditSum, livePer);
-   const pf = p(p(carPrice, 85), pfPer);
+   const pf = p(carPrice - p(carPrice, 20), pfPer);
    const other =  5000 + 750 + 1800; // register, gov rejectr, osago
    const startDopTaxes = bankCom + kasko + live + pf + other;
   
